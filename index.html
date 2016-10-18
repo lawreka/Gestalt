@@ -11,21 +11,22 @@
       margin-right: 2%;
     }
     #title{
-      font-size: x-large;
+      font-size: xx-large;
       font-weight: bold;
       margin-top: 2%;
     }
-    #text{
-      font-size: large;
+    .text{
+      font-size: x-large;
       margin-top: 0.5%;
     }
     #werth{
-      font-size: small;
+      font-size: medium;
       margin-top: 0.25%;
     }
     #top{
       max-width: 70%;
       display: inline-block;
+      margin-bottom: 10%;
     }
     #fg{
       float: right;
@@ -38,17 +39,19 @@
       white-space: nowrap;
     }
     .fgex{
-      width: 30%;
+      width: 33%;
       display: inline-block;
     }
     .capt{
       text-align: center;
       margin-top: 0;
+      margin-bottom: 1%;
+      font-size: medium;
     }
     .bigex{
       max-width: 50%;
-      display: inline-block;
-      float: left;
+      max-height: 75%;
+      display: inline;
     }
     .extext{
       max-width: 50%;
@@ -58,7 +61,29 @@
     .full{
       width: 100%;
       display: block;
-      margin-top: 5%;
+      margin-top: 30%;
+      margin-bottom: 25%;
+    }
+    #toplink{
+      max-width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .sticky{
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: white;
+    }
+    .hidden{
+      display: none;
+    }
+    .underline{
+      font-weight: bolder;
+    }
+    .invisible{
+      opacity: 0;
     }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -68,47 +93,80 @@
       <div id="title">
         Figure-Ground Principle
       </div>
-      <div id="text">
-        The Figure must be different enough from the Ground to be perceived as its own object <a href="#werth">*</a>
+      <div class="text">
+        The Figure must be different enough from the Ground to be perceived as its own object <a href="#" id="ref">*</a>
       </div>
-      <div id="werth">
+      <div class="hidden" id="werth">
         Wertheimer, M. (1923). Laws of Organization in Perceptual Forms. In Green, C. D. (Ed.), Classics in the History of Psychology. <br> Retrieved from <a href="http://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm">http://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm</a>
       </div>
     </div>
     <img id="fg" src="FigureGround.jpg">
-    <div class="examples">
-          <img class="fgex" src="FigureGroundex1.jpg">
-          <img class="fgex" src="FigureGroundex2.jpg">
-          <img class="fgex" src="FigureGroundex3.jpg">
+    <div id="stickybar">
+      <div class="examples">
+        <img class="fgex" src="FigureGroundex1.jpg">
+        <img class="fgex" src="FigureGroundex2.jpg">
+        <img class="fgex" src="FigureGroundex3.jpg">
+      </div>
+      <br>
+      <div class="examples">
+        <p class="fgex capt" id="1">
+          Example 1
+        </p>
+        <p class="fgex capt" id="2">
+          Example 2
+        </p>
+        <p class="fgex capt" id="3">
+          Example 3
+        </p>
+      </div>
     </div>
-    <br>
-    <div class="examples">
-        <p class="fgex capt">Example 1</p>
-        <p class="fgex capt">Example 2</p>
-        <p class="fgex capt">Example 3</p>
-    </div>
-
     <div class="full" id="pg1">
+      <p class="text">Example 1</p>
       <img class="bigex" src="fggexample1.0.jpg">
       <p class="extext">Due to insufficient contrast between figure and ground, the text in the magazine's subtitle is lost.</p>
       <img class="bigex" src="fggexample1.2.jpg">
       <p class="extext">Text color can be changed from blue to white for more contrast, so that small text stands out.</p>
     </div>
     <div class="full" id="pg2">
+      <p class="text">Example 2</p>
       <img class="bigex" src="fggexample2.1.jpg">
       <p class="extext">The edges of the product figures blur into the background and the figures are lost.</p>
       <img class="bigex" src="fggexample2.2.jpg">
       <p class="extext">The white ground could be extended past the edges of the figures so they do not disappear. This solution creates other problems in the original design of the ad, but the figure-ground problem is solved.</p>
     </div>
     <div class="full" id="pg3">
+      <p class="text">Example 3</p>
       <img class="bigex" src="fggexample3.1.jpg">
       <p class="extext">The figure and ground are confused because of the two patterns. The first problem is that they are both too similar and merge into an all-grey image.</p>
       <img class="bigex" src="fggexample3.2.jpg">
       <p class="extext">The second problem is that the pattern on the guitar-shaped figure makes it look transparent which is confusing. There are very few cases where a transparent figure will make the image more clear, so in general this effect is to be avoided.</p>
     </div>
-    <a href="#top"> top </a>
+    <div id="toplink"><a href="#"> top </a> </div>
   <script>
+    window.onscroll=function(){
+      if (document.body.scrollTop > 150){
+        $("#stickybar").addClass("sticky");
+      }
+      else{
+        $("#stickybar").removeClass("sticky");
+      }
+    };
+
+    $("#ref").on("click", function(){
+      if ($("#werth").hasClass("hidden")){
+        $("#werth").removeClass("hidden");
+      }
+      else {
+        $("#werth").addClass("hidden");
+      }
+    });
+
+    $("#toplink").on("click", function(){
+      location.reload();
+    });
+
     // when examples 1, 2, and 3 hit top of page, make them stick
+
     // when you hit full page example anchor, highlight corresponding example title
     // release examples 1, 2, and 3 when return to top of page
 
