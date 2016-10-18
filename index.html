@@ -5,49 +5,108 @@
     <title>Figure-Ground Principle</title>
     <!-- find this page at lawreka.github.io/Gestalt/index.html -->
     <style>
-
+    body{
+      font-family: sans-serif;
+      margin-left: 3%;
+      margin-right: 2%;
+    }
+    #title{
+      font-size: x-large;
+      font-weight: bold;
+      margin-top: 2%;
+    }
+    #text{
+      font-size: large;
+      margin-top: 0.5%;
+    }
+    #werth{
+      font-size: small;
+      margin-top: 0.25%;
+    }
+    #top{
+      max-width: 70%;
+      display: inline-block;
+    }
+    #fg{
+      float: right;
+      max-width: 30%;
+      margin-top: 3%;
+    }
+    .examples{
+      max-width: 100%;
+      display: inline;
+      white-space: nowrap;
+    }
+    .fgex{
+      width: 30%;
+      display: inline-block;
+    }
+    .capt{
+      text-align: center;
+      margin-top: 0;
+    }
+    .bigex{
+      max-width: 50%;
+      display: inline-block;
+      float: left;
+    }
+    .extext{
+      max-width: 50%;
+      display: inline-block;
+      float: right;
+    }
+    .full{
+      width: 100%;
+      display: block;
+      margin-top: 5%;
+    }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
     <div id="top">
-    </div>
-    <div id="title">
-      Figure-Ground Principle
-    </div>
-    <div id="text">
-      The Figure must be different enough from the Ground to be perceived as its own object <a href="#werth">*</a>
-    </div>
-    <div id="werth">
-      Wertheimer, M. (1923). Laws of Organization in Perceptual Forms. In Green, C. D. (Ed.), Classics in the History of Psychology. Retrieved from http://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm
+      <div id="title">
+        Figure-Ground Principle
+      </div>
+      <div id="text">
+        The Figure must be different enough from the Ground to be perceived as its own object <a href="#werth">*</a>
+      </div>
+      <div id="werth">
+        Wertheimer, M. (1923). Laws of Organization in Perceptual Forms. In Green, C. D. (Ed.), Classics in the History of Psychology. <br> Retrieved from <a href="http://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm">http://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm</a>
+      </div>
     </div>
     <img id="fg" src="FigureGround.jpg">
-    <div id="examples">
-      <span id="example1">
-        <img id="fgex1" src="FigureGroundex1.jpg">
-        <p>Example 1</p>
-      </span>
-      <span id="example2">
-        <img id="fgex2" src="FigureGroundex2.jpg">
-        <p>Example 2</p>
-      </span>
-      <span id="example3">
-        <img id="fgex3" src="FigureGroundex3.jpg">
-        <p>Example 3</p>
-      </span>
+    <div class="examples">
+          <img class="fgex" src="FigureGroundex1.jpg">
+          <img class="fgex" src="FigureGroundex2.jpg">
+          <img class="fgex" src="FigureGroundex3.jpg">
     </div>
-    <div id="pg1">
-      <img src="fggexample1.jpg">
+    <br>
+    <div class="examples">
+        <p class="fgex capt">Example 1</p>
+        <p class="fgex capt">Example 2</p>
+        <p class="fgex capt">Example 3</p>
     </div>
-    <div id="pg2">
-      <img src="fggexample2.1.jpg">
-      <img src="fggexample2.2.jpg">
+
+    <div class="full" id="pg1">
+      <img class="bigex" src="fggexample1.0.jpg">
+      <p class="extext">Due to insufficient contrast between figure and ground, the text in the magazine's subtitle is lost.</p>
+      <img class="bigex" src="fggexample1.2.jpg">
+      <p class="extext">Text color can be changed from blue to white for more contrast, so that small text stands out.</p>
     </div>
-    <div id="pg3">
-      <img src="fggexample3.1.jpg">
-      <img src="fggexample3.2.jpg">
+    <div class="full" id="pg2">
+      <img class="bigex" src="fggexample2.1.jpg">
+      <p class="extext">The edges of the product figures blur into the background and the figures are lost.</p>
+      <img class="bigex" src="fggexample2.2.jpg">
+      <p class="extext">The white ground could be extended past the edges of the figures so they do not disappear. This solution creates other problems in the original design of the ad, but the figure-ground problem is solved.</p>
     </div>
-    <a href="#top" id="again"> top </a>
+    <div class="full" id="pg3">
+      <img class="bigex" src="fggexample3.1.jpg">
+      <p class="extext">The figure and ground are confused because of the two patterns. The first problem is that they are both too similar and merge into an all-grey image.</p>
+      <img class="bigex" src="fggexample3.2.jpg">
+      <p class="extext">The second problem is that the pattern on the guitar-shaped figure makes it look transparent which is confusing. There are very few cases where a transparent figure will make the image more clear, so in general this effect is to be avoided.</p>
+    </div>
+    <a href="#top"> top </a>
   <script>
     // when examples 1, 2, and 3 hit top of page, make them stick
     // when you hit full page example anchor, highlight corresponding example title
