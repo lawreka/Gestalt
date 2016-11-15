@@ -10,27 +10,43 @@
       margin-left: 3%;
       margin-right: 2%;
     }
+    .widthtwothirds{
+      width: 66.6%;
+      display: inline;
+    }
+    .widthonethird{
+      width: 33.3%;
+      display: inline;
+    }
     #title{
-      font-size: xx-large;
+      font-size: x-large;
       font-weight: bold;
       margin-top: 2%;
     }
     .text{
-      font-size: x-large;
+      font-size: large;
       margin-top: 0.5%;
     }
-    #werth{
+    .text2{
       font-size: medium;
+      font-weight: bold;
+      display: inline;
+    }
+    .text3{
+      font-size: medium;
+      font-weight: lighter;
+    }
+    #werth{
+      font-size: small;
       margin-top: 0.25%;
+      font-weight: lighter;
     }
     #top{
-      max-width: 70%;
       display: inline-block;
       margin-bottom: 10%;
     }
     #fg{
       float: right;
-      max-width: 30%;
       margin-top: 3%;
     }
     .examples{
@@ -48,15 +64,9 @@
       margin-bottom: 1%;
       font-size: medium;
     }
-    .bigex{
-      max-width: 50%;
-      max-height: 75%;
-      display: inline;
-    }
     .extext{
-      max-width: 50%;
-      display: inline-block;
       float: right;
+      font-size: medium;
     }
     .full{
       width: 100%;
@@ -89,18 +99,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
-    <div id="top">
+    <div id="top" class="widthtwothirds">
       <div id="title">
-        Figure-Ground Principle
+        How to use the Figure-Ground Principle in design
       </div>
       <div class="text">
+        <div class="text2">What is the Figure-Ground Principle?
+        </div>
+        <br>
         The Figure must be different enough from the Ground to be perceived as its own object <a href="#" id="ref">*</a>
+        <div class="text3"> Remember the Figure-Ground Principle to make sure the elements of your design are clear and functional. <br>Avoid the problems illustrated in the three examples below (scroll for full examples).
+        </div>
       </div>
       <div class="hidden" id="werth">
         Wertheimer, M. (1923). Laws of Organization in Perceptual Forms. In Green, C. D. (Ed.), Classics in the History of Psychology. Retrieved from <a href="http://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm">http://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm</a>
       </div>
     </div>
-    <img id="fg" src="FigureGround.jpg">
+    <img id="fg" src="FigureGround.jpg" class="widthonethird">
     <div id="stickybar">
       <div class="examples">
         <img class="fgex" src="FigureGroundex1.jpg">
@@ -110,36 +125,45 @@
       <br>
       <div class="examples">
         <p class="fgex capt" id="1">
-          Example 1
+          Problem 1:<br>
+          <span class="text3">Contrast</span>
         </p>
         <p class="fgex capt" id="2">
-          Example 2
+          Problem 2:<br>
+          <span class="text3">Edges</span>
         </p>
         <p class="fgex capt" id="3">
-          Example 3
+          Problem 3:<br>
+          <span class="text3">Patterns</span>
         </p>
       </div>
     </div>
     <div class="full" id="pg1">
-      <p class="text">Example 1</p>
-      <img class="bigex" src="fggexample1.0.jpg">
-      <p class="extext">Due to insufficient contrast between figure and ground, the text in the magazine's subtitle is lost.</p>
-      <img class="bigex" src="fggexample1.2.jpg">
-      <p class="extext">Text color can be changed from blue to white for more contrast, so that small text stands out.</p>
+      <p class="text">Problem 1</p>
+      <div class="text3">Before</div>
+      <img class="widthtwothirds" src="fggexample1.0.jpg">
+      <p class="extext widthonethird">Due to insufficient contrast between figure and ground, the text in the magazine's subtitle is lost.</p>
+      <div class="text3">After</div>
+      <img class="widthtwothirds" src="fggexample1.2.jpg">
+      <p class="extext widthonethird">Text color can be changed from blue to white for more contrast, so that small text stands out.</p>
     </div>
     <div class="full" id="pg2">
-      <p class="text">Example 2</p>
-      <img class="bigex" src="fggexample2.1.jpg">
-      <p class="extext">The edges of the product figures blur into the background and the figures are lost.</p>
-      <img class="bigex" src="fggexample2.2.jpg">
-      <p class="extext">The white ground could be extended past the edges of the figures so they do not disappear. This solution creates other problems in the original design of the ad, but the figure-ground problem is solved.</p>
+      <p class="text">Problem 2</p>
+      <div class="text3">Before</div>
+      <img class="widthtwothirds" src="fggexample2.1.jpg">
+      <p class="extext widthonethird">The edges of the product figures blur into the background and the figures are lost.</p>
+      <div class="text3">After</div>
+      <img class="widthtwothirds" src="fggexample2.2.jpg">
+      <p class="extext widthonethird">The white ground could be extended past the edges of the figures so they do not disappear. This solution creates other problems in the original design of the ad, but the figure-ground problem is solved.</p>
     </div>
     <div class="full" id="pg3">
-      <p class="text">Example 3</p>
-      <img class="bigex" src="fggexample3.1.jpg">
-      <p class="extext">The figure and ground are confused because of the two patterns. The first problem is that they are both too similar and merge into an all-grey image.</p>
-      <img class="bigex" src="fggexample3.2.jpg">
-      <p class="extext">The second problem is that the pattern on the guitar-shaped figure makes it look transparent which is confusing. There are very few cases where a transparent figure will make the image more clear, so in general this effect is to be avoided.</p>
+      <p class="text">Problem 3</p>
+      <div class="text3">Before</div>
+      <img class="widthtwothirds" src="fggexample3.1.jpg">
+      <p class="extext widthonethird">The figure and ground are confused because of the two patterns. The first problem is that they are both too similar and merge into an all-grey image.</p>
+      <div class="text3">After</div>
+      <img class="widthtwothirds" src="fggexample3.2.jpg">
+      <p class="extext widthonethird">The second problem is that the pattern on the guitar-shaped figure makes it look transparent which is confusing. There are very few cases where a transparent figure will make the image more clear, so in general this effect is to be avoided.</p>
     </div>
     <div id="toplink"><a href="#"> top </a> </div>
   <script>
